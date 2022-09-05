@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cálculo IVA</title>
+</head>
+<body>
+
+    <h1>Cálculo IVA</h1>
+    <h2>Seleccione el producto A:</h2>
+    <select name="product_1" id="product_1" onChange="update()">
+        <option value="camiseta">Camiseta</option>
+        <option value="pack_pizzas">Pack Pizzas</option>
+        <option value="pack_novelas">Pack Novelas</option>
+        <option value="defectuoso">Defectuoso</option>
+        <option value="agotado">Agotado</option>
+    </select>
+    <h3>Cantidad:</h3>
+    <input type="text" id="product_1_count" disabled>
+    <h3>Precio:</h3>
+    <input type="text" id="product_1_price" disabled>
+    <h3>Tipo:</h3>
+    <input type="text" id="product_1_type" disabled>
+    <h3>IVA</h3>
+    <input type="text" id="product_1_iva" disabled>
+    <h3>Precio Final:</h3>
+    <input type="text" id="product_1_final_price" disabled>
+
+    <h2>Seleccione el producto B:</h2>
+    <select name="product_2" id="product_2" onChange="update()">
+        <option value="camiseta">Camiseta</option>
+        <option value="pack_pizzas">Pack Pizzas</option>
+        <option value="pack_novelas">Pack Novelas</option>
+        <option value="defectuoso">Defectuoso</option>
+        <option value="agotado">Agotado</option>
+    </select>
+    <h3>Cantidad:</h3>
+    <input type="text" id="product_2_count" disabled>
+    <h3>Precio:</h3>
+    <input type="text" id="product_2_price" disabled>
+    <h3>Tipo:</h3>
+    <input type="text" id="product_2_type" disabled>
+    <h3>IVA</h3>
+    <input type="text" id="product_2_iva" disabled>
+    <h3>Precio Final:</h3>
+    <input type="text" id="product_2_final_price" disabled>
+    
+    <h2>Resultado:</h2>
+    <input type="text" id="result" disabled>
+    
+    <script src="js/script.js"></script>
+
+</body>
+</html>
