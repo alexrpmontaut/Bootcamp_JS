@@ -57,6 +57,6 @@ function dividir() {
 
 document.getElementById('suma').addEventListener("click",() => document.getElementById('result').value = sumar());
 document.getElementById('resta').addEventListener("click",() => document.getElementById('result').value = restar());
-document.getElementById('multiplacion').addEventListener("click",() => document.getElementById('result').value = multiplicar());
+document.getElementById('multiplicacion').addEventListener("click",() => document.getElementById('result').value = multiplicar());
 document.getElementById('division').addEventListener("click",() => document.getElementById('result').value = dividir());
 
