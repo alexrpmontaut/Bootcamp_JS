@@ -1,88 +1,47 @@
+//Variables
+var num_old = 0;
+var operador_old = "=";
+
 //Funciones
-/*
-introducir numero a
-seleccionar operacion -> guardar el número actual y recordar operación
-introducir número b
-introducir operación -> se refresca con (a signo b), memorizar (a signo b) y recordar operación
-introducir número c
-introducir operación -> se refresca con [(a signo b) signo c], memorizar [(a signo b) signo c] y recordar operacion
 
-si se pulsa = -> se refresca con x signo y = z, se recuerda z y no recuerda operación
+function calcular(operador) {
+    var num_new = document.getElementById('num1').value;
 
+    var check_num = isNaN(num_new);
 
-*/
-function calcular(num1, operador) {
-    var actual = document.getElementById('num1').value;
-    var memoria = document.getElementById('num2').value;
-    var check_actual = isNaN(actual);
-    var check_memoria = isNaN(memoria);
-
-    switch(operador){
-        case "+":
-            var result = Number(num1) + Number(num2);
-            return result;
-        case "-":
-            var result = Number(num1) - Number(num2);
-            return result;
-        case "*":
-            var result = Number(num1) * Number(num2);
-            return result;
-        case "/":
-            var result = Number(num1) / Number(num2);
-            return result;
-        case "=":
-            var result = Number(num1) = Number(num2);
-            return result;
-    }
-
-    if ((check1) || (check2)) {
+    if (check_num) {
+        num_old = 0;
+        operador_old = "=";
         return "Error";
     }
     else {
-        var result = Number(num1) + Number(num2);
-        return result;
-    }
-}
-
-function restar() {
-    var num1 = document.getElementById('num1').value;
-    var num2 = document.getElementById('num2').value;
-    var check1 = isNaN(num1);
-    var check2 = isNaN(num2);
-    if ((check1) || (check2)) {
-        return "Error";
-    }
-    else {
-        var result = Number(num1) - Number(num2);
-        return result;
-    } 
-}
-
-function multiplicar() {
-    var num1 = document.getElementById('num1').value;
-    var num2 = document.getElementById('num2').value;
-    var check1 = isNaN(num1);
-    var check2 = isNaN(num2);
-    if ((check1) || (check2)) {
-        return "Error";
-    }
-    else {
-        var result = Number(num1) * Number(num2);
-        return result;
-    }
-}
-
-function dividir() {
-    var num1 = document.getElementById('num1').value;
-    var num2 = document.getElementById('num2').value;
-    var check1 = isNaN(num1);
-    var check2 = isNaN(num2);
-    if ((check1) || (check2)) {
-        return "Error";
-    }
-    else {
-        var result = Number(num1) / Number(num2);
-        return result;
+        switch(operador_old){
+            case "+":
+                var result = Number(num_old) + Number(num_new);
+                num_old = result;
+                operador_old = operador;
+                return result;
+            case "-":
+                var result = Number(num_old) - Number(num_new);
+                num_old = result;
+                operador_old = operador;
+                return result;
+            case "*":
+                var result = Number(num_old) * Number(num_new);
+                num_old = result;
+                operador_old = operador;
+                return result;
+            case "/":
+                var result = Number(num_old) / Number(num_new);
+                num_old = result;
+                operador_old = operador;
+                return result;
+            case "=":
+                var result = Number(num_new);
+                num_old = result;
+                operador_old = operador;
+                return result;
+        }
     }
 }
 
@@ -91,4 +50,3 @@ document.getElementById('resta').addEventListener("click",() => document.getElem
 document.getElementById('multiplicacion').addEventListener("click",() => document.getElementById('num1').value = calcular("*"));
 document.getElementById('division').addEventListener("click",() => document.getElementById('num1').value = calcular("/"));
 document.getElementById('resultado').addEventListener("click",() => document.getElementById('num1').value = calcular("="));
-
