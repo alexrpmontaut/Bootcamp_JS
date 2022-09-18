@@ -51,33 +51,59 @@ function mostrarListado(){
 
 function mostrarProductos(){
     console.log("Carrito de compra:");
-        for(var lista of carrito){
-            for(var propiedad in lista){
-                if (propiedad == "name")
-                {
-                    console.log(" --> " + lista[propiedad]);
-                }
+    for(var lista of carrito){
+        for(var propiedad in lista){
+            if (propiedad == "name")
+            {
+                console.log(" --> " + lista[propiedad]);
             }
         }
+    }
 }
 
 function eliminarProducto(){
     var producto = document.getElementById("cesta").value;
-    var ids = [];
-    console.log(ids.lenght);//POR AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-    for(var lista of carrito){
-        for(var propiedad in lista){
-            var longitud = ids.push(propiedad);
+    var eliminaciones = false;
+    for (i = 0; i < carrito.length; i++){
+        if(carrito[i].id == producto){
+            console.log("Se ha eliminado "+ carrito[i].name + " de la cesta.");
+            carrito.splice(i,1);
+            eliminaciones = true;
         }
     }
-    console.log(ids.lenght);
-    console.log(longitud);
+    if (!eliminaciones){
+        console.log("No se ha eliminado nada.");
+    }
+}
 
+function calcularPrecio(){
+    var precio = 0;
+    var envio_gratis = true;
+    for (i = 0; i < carrito.length; i++){
+        precio += (carrito[i].price * carrito[i].count);
+        if (!carrito[i].premium){
+            envio_gratis = false;
+        }
+    }
+    console.log("El precio total es de " + precio + " €");
+    precio >= 50 ? console.log("Tiene derecho a un 5% de descuento, su precio final es de " + (precio * 0.95) + " €") : console.log("¡Puede obtener un 5% de descuento por compras de 50€ o superior!");
+    envio_gratis ? console.log("Sin gastos de envío.") : console.log("Con gastos de envío aparte.");
+}
+
+function mostrarPrime(){
+    var total_primes = 0;
+    console.log("Productos Prime del carrito:");
+    for (i = 0; i < carrito.length; i++){
+        if(carrito[i].premium){
+            console.log(" --> " + carrito[i].name);
+            total_primes++;
+        }
+    }
+    (total_primes != 0) ? console.log("Hay un total de " + total_primes + " producto(s) Prime en el carrito.") : console.log("No hay productos Prime en el carrito.");
 }
 
 document.getElementById("listado").addEventListener("click", () => mostrarListado());
 document.getElementById("productos").addEventListener("click", () => mostrarProductos());
 document.getElementById("eliminar").addEventListener("click", () => eliminarProducto());
-//document.getElementById("eliminar").addEventListener("click", () => mostrarListado());
-//document.getElementById("total").addEventListener("click", () => mostrarListado());
-//document.getElementById("prime").addEventListener("click", () => mostrarListado());
+document.getElementById("total").addEventListener("click", () => calcularPrecio());
+document.getElementById("prime").addEventListener("click", () => mostrarPrime());
