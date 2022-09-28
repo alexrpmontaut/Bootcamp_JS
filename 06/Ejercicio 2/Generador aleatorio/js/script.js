@@ -40,7 +40,6 @@ function randomPick(n, min, max){
 
   while (valores.length < iteraciones)
   {
-    
     const valor = Math.floor(Math.random() * range) + min;
     if ((valores.indexOf(valor) == -1))
     {
@@ -50,7 +49,5 @@ function randomPick(n, min, max){
     }
   }
 }
-
-
 
 generar.addEventListener("click", () => readInput());
