@@ -1,0 +1,4 @@
+.cache
+dist
+#esto si debería incluirse
+package.json

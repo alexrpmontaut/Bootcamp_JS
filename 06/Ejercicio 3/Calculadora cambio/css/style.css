@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+    display: block;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    border: none;
+    font-size: 16px;
+}
