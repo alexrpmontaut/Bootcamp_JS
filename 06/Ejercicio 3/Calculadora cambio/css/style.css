@@ -10,3 +10,15 @@ body {
     border: none;
     font-size: 16px;
 }
+
+
+.input_dinero
+{
+    display: inline-flex;
+
+}
+
+.dinero
+{
+    margin-inline: 10px;
+}

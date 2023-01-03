@@ -10,15 +10,51 @@
 <body>
     <div class="contenedor">
         <h1>Calculadora de cambio</h1>
+        <div class="elemento">
             <h4>Importe total</h4>
-            <input type="number" id="total">
+            <input type="number" id="total" value="0">
             <br>
             <h4>Dinero entregado</h4>
-            <input type="number" id="entregado">
+            <input type="number" id="entregado" value="0">
             <br>
             <br>
             <button id="calcular">Calcular</button>
+        </div>
+        <br>
+        <h1>Calculadora de cambio con caja</h1>
+        <div class="elemento">
+            <h4>Importe total</h4>
+            <input type="number" id="total_caja" value="0">
+            <br>
+            <h4>Dinero entregado</h4>
+            <input type="number" id="entregado_caja" value="0">
+            <br>
+            <h4>Dinero en caja</h4>
+            <div class="input_dinero">
+                <div class="columna_dinero">
+                    <p>200€<input type="number" class="dinero" id="caja_200" value="0"></p>
+                    <p>100€<input type="number" class="dinero" id="caja_100" value="0"></p>
+                    <p>50€<input type="number" class="dinero" id="caja_50" value="0"></p>
+                    <p>20€<input type="number" class="dinero" id="caja_20" value="0"></p>
+                    <p>10€<input type="number" class="dinero" id="caja_10" value="0"></p>
+                    <p>5€<input type="number" class="dinero" id="caja_5" value="0"></p>
+                    <p>2€<input type="number" class="dinero" id="caja_2" value="0"></p>
+                </div>
+                <div class="columna_dinero">
+                    <p>1€<input type="number" class="dinero" id="caja_1" value="0"></p>
+                    <p>0,50€<input type="number" class="dinero" id="caja_0_50" value="0"></p>
+                    <p>0,20€<input type="number" class="dinero" id="caja_0_20" value="0"></p>
+                    <p>0,10€<input type="number" class="dinero" id="caja_0_10" value="0"></p>
+                    <p>0,05€<input type="number" class="dinero" id="caja_0_05" value="0"></p>
+                    <p>0,02€<input type="number" class="dinero" id="caja_0_02" value="0"></p>
+                    <p>0,01€<input type="number" class="dinero" id="caja_0_01" value="0"></p>
+                </div>
+            </div>
+            <br>
+            <button id="calcular_caja">Calcular</button>
+        </div>
     </div>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
