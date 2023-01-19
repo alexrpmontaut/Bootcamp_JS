@@ -146,4 +146,3 @@ function validarColor()
     console.log(check);
     console.log("\n");
 }
-
