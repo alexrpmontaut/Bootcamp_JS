@@ -1,29 +1,32 @@
-// client-business.js
+import * as AccountBusiness from "./account-business";
+import * as DataBusiness from "./data-business";
 
-function getClientElement(client) {
-const allAccounts = getAccounts();
-const clientAccounts = [];
-for (let account of allAccounts) {
-    if (account.clientId === client.id) {
-    clientAccounts.push(account);
+const getClientElement =function(client) {
+    const allAccounts = DataBusiness.getAccounts();
+    const clientAccounts = [];
+    for (let account of allAccounts) {
+        if (account.clientId === client.id) {
+        clientAccounts.push(account);
+        }
     }
+
+    const node = getClientNode(client);
+    const ul = AccountBusiness.getClientAccountsElement(clientAccounts);
+
+    node.appendChild(ul);
+
+    return node;
 }
 
-const node = getClientNode(client);
-const ul = getClientAccountsElement(clientAccounts);
+const getClientNode = function(client) {
+    const li = document.createElement("li");
+    li.append(getFullName(client));
 
-node.appendChild(ul);
-
-return node;
+    return li;
 }
 
-function getClientNode(client) {
-const li = document.createElement("li");
-li.append(getFullName(client));
-
-return li;
+const getFullName = function(client) {
+    return client.first_name + " " + client.last_name;
 }
 
-function getFullName(client) {
-return client.first_name + " " + client.last_name;
-}
+export {getClientElement, getClientNode, getFullName};

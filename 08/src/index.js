@@ -1,5 +1,5 @@
-// index.js 
+import * as ClientListBusiness from "./client-list-business";
 
 window.onload = function() {
-    printClientsAccounts();
+  ClientListBusiness.printClientsAccounts();
   };
