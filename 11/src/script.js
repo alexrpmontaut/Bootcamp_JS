@@ -40,10 +40,13 @@ calcularTipoHabitacion(reserva) {
 }
 
 calcularDesayuno(reserva) {
+  return (reserva.desayuno ? (this.desayuno * reserva.pax * reserva.noches) : 0);
+  /*
   if (reserva.desayuno){
     return (this.desayuno * reserva.pax * reserva.noches);
   }
   else return 0;
+  */
 }
 
 get subtotal(){
